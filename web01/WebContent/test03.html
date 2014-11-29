@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* 태그이름으로 대상 지정하기 */
+h2 {color: red;}
+
+/* 여러 개 태그 지정하기 */
+h1, h3 {text-decoration: underline;}
+
+/* 태그 그룹 지정하기 */
+.g01 {
+	font-style: italic;
+	border-left: 10px solid blue;
+}
+.g02 {
+	border-top: red 2px dashed;
+}
+
+.g01, .g02 {
+	background-color: yellow;
+}
+
+#id01 { text-decoration: line-through;}
+</style>
+</head>
+<body>
+<h1 class="g02">CSS 셀렉터</h1>
+<h1 class="g01 g02">테스트1</h1>
+<h1 id='id01'>테스트2</h1>
+<h2 id='id02' class="g01">테스트3</h2>
+<h2 class="g01 g02">테스트4</h2>
+<h3 class="g01">테스트5</h3>
+<h3>테스트6</h3>
+</body>
+</html>

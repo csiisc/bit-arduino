@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* 직계 자식 컴포넌트 지정하기 */
+/*
+#header > a {
+	background-color: red;
+	color: white;
+}
+
+ 자손 컴포넌트 지정하기 
+#header a {
+	background-color: blue;
+	color: white;
+}
+*/
+
+/* 제약 조건 지정하기 */
+a.menu.g01 {
+	background-color: red;
+}
+
+</style>
+
+</head>
+<body>
+<div id="header">
+<a href="#">회사로고</a>
+	<div id="member-bar">
+		<a class="menu" href="#">메뉴1</a>
+		<a class="menu g01" href="#">메뉴2</a>
+		<a class="menu" href="#">메뉴3</a>
+		<button class="menu g01">메뉴4</button>
+	</div>
+</div>
+<div id="content">
+<h1>제목</h1>
+<p>내용
+<a href='#'>테스트</a>
+</p>
+</div>
+<div id="footer">
+<p>이 사이트의 모든 권리는 xx에 있습니다. (02-222-2222)</p>
+</div>
+<!-- 
+DOM 트리:
+=> 웹 브라우저가 HTML 해석하고 트리관계로 내부 컴포넌트를 관리
+=> HTML 컴포넌트의 트리 구조
+=> 화면에 출력되는 컴포넌트의 관계
+Document
+	-> head
+		-> meta
+		-> title
+		-> style
+	-> body
+		-> div
+			-> a
+			-> a
+			-> a
+			-> a
+		-> div
+			-> h1
+			-> p
+		-> div
+			-> address
+ -->
+</body>
+</html>
