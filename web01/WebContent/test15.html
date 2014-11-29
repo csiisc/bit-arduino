@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	border: 1px solid red;
+	padding: 20px;
+	margin: 20px; /*위/아래는 합산하여 계산 */
+}
+</style>
+
+</head>
+<body>
+<h1>이벤트 처리</h1>
+<div id="d1">
+	<div id="d11"><button id="btn1"
+	onclick="var a = 20; a+= 100; console.log('okok'); alert('헐...' + a);">버튼1</button></div>
+	<div id="d12"><button id="btn2">버튼2</button></div>
+</div>
+<div id="d2">
+	<div id="d21"><button id="btn3">버튼3</button></div>
+	<div id="d22"><button id="btn4">버튼4</button></div>
+</div>
+<script type="text/javascript">
+// 1. 이벤트 리스너 등록
+//=> 이벤트가 발생했을 때 호출될 함수 등록
+// 태그에 onxxxx="자바스크립트 코드" 넣기
+
+// 2. 해당 태그를 찾아서 addEventListener()로 등록하기
+// document 객체?
+// => 웹 브라우저에게 제공하는 객체.
+// => DOM 트리를 다루는 객체.
+// => window, navigator, history, location, document, ...
+var b2 = document.getElementById("btn2");
+b2.addEventListener("click", myclick);
+
+// 이벤트가 발생했을 때 호출될 함수 정의
+// => 파라미터로 이벤트 정보를 담은 객체가 넘어온다.
+// 이벤트가 발생하면 웹 브라우저가 호출한다.
+function myclick(event) {
+	var a = 20;
+	a += 200;
+	console.log("okokokokokoko");
+	alert("이것이야.." + a);
+}
+
+//3. 익명 함수를 사용하여 리스너 등록하기
+//"리스너" => 이벤트가 발생했을 때 호출될 함수
+var b3 = document.getElementById("btn3");
+b3.addEventListener("click", function(event){
+	alert("okokok.d.d.d.d.d.d.d");
+});
+
+//4. 이벤트 버블링 사건!!!!
+//=> 이벤트는 부모로 전달된다.
+// capturing, trageting, bubbling
+//=> addEventListener()에 메서드를 등록하면,
+// target 단계나 bubble 단계에서 호출된다.
+document.getElementById("btn4").addEventListener("click", function(event){
+	event.stopPropagation(); //버블링 취소하기
+	// 버블링을 취소해야만, 부모에게 전달되지 않는다.
+	console.log("btn44444444");
+});
+
+// 하나의 이벤트에 여러 리스너 등록가능.
+document.getElementById("d22").addEventListener("click", function(event){
+	//event.stopPropagation(); //오직 부모로 전파하지 않는다.
+	event.stopImmediatePropagation(); //즉시 전파 차단.
+	console.log("오호라..d22");
+});
+document.getElementById("d22").addEventListener("click", function(event){
+	console.log("그렇군...d22");
+});
+document.getElementById("d22").addEventListener("click", function(event){
+	console.log("얼씨구..d22");
+});
+
+document.getElementById("d2").addEventListener("click", function(event){
+	console.log("d2###########");
+});
+
+//리스너를 하나만 등록할 것 같으면,
+//다음과 같이 onxxxx에 바로 등록해도 된다.
+document.getElementById("d2").onclick = function(evnet) {
+	alert("아하... 이런코드를 많이 본다.")
+}
+
+</script>
+</body>
+</html>

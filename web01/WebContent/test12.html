@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+</head>
+<body>
+<h1>자바스크립트 기본 문법 정리</h1>
+<!-- 
+=> 변수 선언과 window 객체
+=> 함수 선언
+=> 익명 함수 선언
+=> 자바스크립트 객체
+-->
+<h1>제목1</h1>
+<script type="text/javascript">
+// 주의!익명 함수는 일반 문장으로 취급한다.
+"use strict"; //문법을 엄격하게 검사하라!
+
+//익명 함수 만들기
+//=> 함수 선언 시 즉시 변수에 할당해야 한다.
+var plus = function(a, b) {
+	return a+b;
+};
+var minus = function(a, b) {
+	return arguments[0] - arguments[1];
+};
+var multiple = function(a, b) {
+	return a * b * arguments[2] * arguments[3];
+};
+
+console.log( minus(10, 20) );
+var result = plus(10, 20);
+console.log(result);
+console.log( multiple(2, 3, 4, 5) );
+
+//바깥에 선언하는 모든 변수와 함수는
+//window 객체의 멤버이다.
+console.log(window.divide(30,60));
+function divide(a, b) {
+	return a / b;
+}
+
+</script>
+</body>
+</html>

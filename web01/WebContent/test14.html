@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+</head>
+<body>
+<h1>자바스크립트 기본 문법 정리</h1>
+<!-- 
+=> 변수 선언과 window 객체
+=> 함수 선언
+=> 익명 함수 선언
+=> 자바스크립트 객체
+-->
+<script type="text/javascript">
+// 자바스크립트의 객체 생성
+// C++/Java/C#=> 설계도 -> 객체 생성
+// 자바스크립트 => 객체 템플릿 -> 복제 -> 객체 생성
+"use strict"; //문법을 엄격하게 검사하라!
+
+// 자바스크립트 객체 생성 특별 표기법
+// JavaScript Object Notation = JSON
+// JSON 표기법과 자바스크립트의 문법 차이점
+// => JSON에서 문자열은 반드시 따옴표(")를  사용해야 한ㄷ.
+// => 변수 이름에도 따옴표를 붙인다.
+/*var obj1 = {};
+obj1.name = "홍길동";
+obj1.age = 20;
+obj1.print = function() {
+	console.log( this.name, this.age );
+}*/
+
+//www.json.org
+
+var obj1 = {
+	name: "홍길동",
+	age: 22,
+	print: function() {
+		console.log( this.name, this.age );
+	}
+};
+obj1.print();
+
+console.log(JSON.stringify(obj1));
+//{"name":"홍길동","age":22}
+
+var jsonString = '{'
+	+ '"subject":"오호라...주제",'
+	+ '"content":"내용일세",'
+	+ '"writer":"홍길동"' +
+'}';
+console.log(jsonString);
+var obj2 = JSON.parse(jsonString);
+console.log(obj2.subject);
+console.log(obj2.content);
+console.log(obj2.writer);
+</script>
+</body>
+</html>

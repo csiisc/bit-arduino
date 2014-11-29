@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+</head>
+<body>
+<h1>자바스크립트 기본 문법 정리</h1>
+<!-- 
+=> 변수 선언과 window 객체
+=> 함수 선언
+=> 익명 함수 선언
+=> 자바스크립트 객체
+-->
+<h1>제목1</h1>
+<script type="text/javascript">
+// 항상 <script>태그를 실행할 때
+// 항상 함수 선언을 먼저 실행하고,
+// 나머지 문장을 실행한다.
+"use strict"; //문법을 엄격하게 검사하라!
+
+console.log( minus(10, 20) );
+var result = plus(10, 20);
+console.log(result);
+console.log( multiple(2, 3, 4, 5) );
+
+function plus(a, b) {
+	return a+b;
+}
+function minus(a, b) {
+	return arguments[0] - arguments[1];
+}
+function multiple(a, b) {
+	return a * b * arguments[2] * arguments[3];
+}
+
+</script>
+</body>
+</html>

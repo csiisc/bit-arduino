@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div id = 'd1'>
+</div>
+<script type="text/javascript">
+//1. 태그 만들기
+var e1 = document.createElement("h1");
+
+//2. 태그를 DOM 트리에 붙인다. => 화면에 출력한다.
+var e2 = document.getElementById('d1');
+e2.appendChild(e1);
+
+//3. 태그에 콘텐츠(시작태그와 끝태그 사이의 값) 넣기
+//1)
+//e1.innerHTML = "오호라... innerHTML 사용";
+
+//2) createTextNode로 텍스트 콘텐츠 만들기
+var content = document.createTextNode("헐.... 복잡타..");
+e1.appendChild(content);
+
+document.getElementById('d1').onclick = function() {
+	e2.removeChild(e1);
+};
+
+</script>
+</body>
+</html>

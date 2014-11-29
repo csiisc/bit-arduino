@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div id = 'd1'>
+<button id='btn1'>요청</button><br>
+<table id='t1' border="1">
+<tr>
+	<th>번호</th> <th>제목</th> <th>작성자</th> <th>조회수</th>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+//동적으로 테이블 만들기
+document.getElementById('btn1').onclick = function() {
+	var xhr = new XMLHttpRequest();
+	//요청 상태가 바귈때 마다 호출될 메서드 등록
+	// readyState
+	// 1 : open() 호출 후
+	// 2 : send() 호출 후
+	// 3 : 데이터 수신 중....
+	// 4 ; 데이터 수신 완료
+	xhr.onreadystatechange = function() {
+		//console.log(xhr.readyState);
+		if(xhr.readyState == 4) {
+			var obj = JSON.parse(xhr.responseText);
+			console.log(obj.name);
+		}
+	};
+	xhr.open("GET",
+			"http://api.openweathermap.org/data/2.5/weather?q=London,uk",
+			true);
+	xhr.send(); //서버에 요청
+	//var obj = JSON.parse(xhr.responseText);
+	//console.log(obj.name);
+	
+	//eomjinyoung
+}
+</script>
+</body>
+</html>

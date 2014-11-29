@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+
+</head>
+<body>
+<h1>자바스크립트 기본 문법 정리</h1>
+<!-- 
+=> 변수 선언과 window 객체
+=> 함수 선언
+=> 익명 함수 선언
+=> 자바스크립트 객체
+-->
+<script type="text/javascript">
+// 자바스크립트는 동적 타입 
+//=> 값을 할당할 때 변수의 타입이 결정.
+"use strict";
+
+var v1, v2, v3, v4, v5, v6, v7;
+//strict 모드에서는 다음은 오류
+//v2 = 20; //이전에는 var 없이 선언 가능. 현재도 가능.
+console.log(v1);
+
+v1 = '문자열';
+v2 = 20;
+v3 = 3.14;
+v4 = true;
+v5 = new Object();
+v6 = null;
+v7 = function(){};
+
+console.log(typeof v1);
+console.log(typeof v2);
+console.log(typeof v3);
+console.log(typeof v4);
+console.log(typeof v5);
+console.log(typeof v6);
+console.log(typeof v7);
+
+//자바스크립트의 글로벌 변수(함수 밖에 있는 변수)는
+//모두 window 객체의 멤버이다.
+console.log(window.v1);
+console.log(window.v2);
+console.log(window.v3);
+console.log(window.v4);
+console.log(window.v5);
+console.log(window.v6);
+console.log(window.v7);
+
+window.v1 = "오호라..";
+console.log(v1);
+
+</script>
+</body>
+</html>
