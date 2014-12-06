@@ -1,0 +1,19 @@
+﻿엄진영
+eomjinyoung
+
+서민우
+suh.minu@gmail.com
+리눅스 커널/드라이버
+Cortex-M3(IoT 디바이스)
+안드로이드 ADK
+아두이노
+
+아두이노(반도체소자특성/외부전자회로)->Cortex-M3(칩 내부)/mbed->리눅스
+
+eleparts.co.kr
+아두이노 플러스(arduinoplus.cc)
+샘플전자
+인터보드
+arduino 3d printer
+
+tera term

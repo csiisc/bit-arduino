@@ -26,4 +26,16 @@
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>arduino</name>
+			<type>2</type>
+			<locationURI>PARENT-1-PROJECT_LOC/arduino</locationURI>
+		</link>
+		<link>
+			<name>teacher.txt</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/teacher.txt</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

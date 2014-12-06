@@ -1,0 +1,5 @@
+MICOM - micro computer(mainboard)
+
+SOC - system on chip
+
+arduino millis
