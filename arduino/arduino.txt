@@ -5,3 +5,8 @@ SOC - system on chip
 arduino millis
 
 fritzing
+
+arduino usb shield
+android adk demokit
+bjt type transistor
+fet type transistor
